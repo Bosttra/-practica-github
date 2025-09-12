@@ -16,3 +16,6 @@ print(f"el valor {var1} tiene asignada la variavle Var1")
 # imput para que el usuario pueda poner una valor a la variable.. var1=input(texto)
 var3=input("texto" )
 print(var3)
+
+print(var1, "astronomos en el dia de hoy")
+
