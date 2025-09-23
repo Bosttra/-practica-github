@@ -4,7 +4,7 @@ tatal_suma=var1+var2
 total_resta=var1-var2
 total_multi=var1*var2
 total_potencia=var1**var2
-total_divi=var1/var2 
+total_divi=round(var1/var2 )
 total_diviTot=round(var1//var2, 2)
 total_divirest=var1%var2
 
