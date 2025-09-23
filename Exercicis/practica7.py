@@ -1,10 +1,11 @@
-var=float(input"un numero: ")
+var1=float(input("un numero: "))
 var2=float(input("un alter: "))
 tatal_suma=var1+var2
 total_resta=var1-var2
 total_multi=var1*var2
 total_potencia=var1**var2
-total_divi=round(2)var1/var2
+total_divi=var1/var2,
+round(total_divi, 2)
 total_diviTot=var1//var2
 total_divirest=var1%var2
 
