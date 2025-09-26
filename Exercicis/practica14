@@ -1,0 +1,5 @@
+import math
+x=float(input("introdueix valor del diametre: "))
+print(f"el perimetro es {round(math.pi*x,1)}")
+print(f"el area es {round((x/2)**2*math.pi, 1)}")
+
