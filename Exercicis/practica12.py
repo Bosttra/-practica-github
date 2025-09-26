@@ -1,0 +1,7 @@
+print("en aquest programa el area y perimnetre de un trapeci")
+B=float(input("introdueix valor vase major: "))
+b=float(input("introdueix valor vase menor: "))
+h=float(input("introdueix valor de altura: "))
+L=float(input("introdueix valor del costat: "))
+print("el area del trapesi es ", ((b+B) *h)/2)
+print ("el perimetre equival a ", b+B+2*L)
