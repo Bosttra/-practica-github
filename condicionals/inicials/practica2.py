@@ -3,7 +3,7 @@ print("1: hígado de panda")
 print("2: panda rojo a la plancha")
 print("3: cuerno de unicornio al vapor")
 plato=int(input("escoje el plato: "))
-if plato>3 and plato<0:
+if plato<3 and plato>0:
     print("increible elección!")
     input(" puedes explicarme por que este plato: ")
     print("deacuerdo aqui te viene el plato")
@@ -12,7 +12,10 @@ if plato>3 and plato<0:
         print("nada pues asta la proxima")
     else:
         print("aqui te llecgara el plato jonto a una pequeña multa por consumo de alimentos con animales protejidos")
+        print("(·_·)")
 elif plato==3  :
     print("enserio piensas que eso existe?") 
-else plato!=1 or plato!=2 or plarto!=3:
+
+if plato !=1 and plato!=2 and plato!=3:
     print("este plato no esta en el menu")
+
