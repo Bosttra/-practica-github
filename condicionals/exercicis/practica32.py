@@ -2,7 +2,7 @@
 #no distinguir entre mayúsculas y minúsculas
 x="A quién madruga Dios ayuda"
 x=x.lower()
-y=x.find("Dios")
+y=x.find("Dios.")
 if y<0:
     print("la palabra Dios no esta en la frase")
 else:
