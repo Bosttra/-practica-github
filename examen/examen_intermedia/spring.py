@@ -12,3 +12,7 @@ funcion()
 funcion()
 funcion()
 funcion()
+x=0
+while 0==0:
+    print(x)
+    x+=1
