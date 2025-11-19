@@ -14,7 +14,6 @@ while sum<50:
     print(F"la suma de {num1} mes {num2} es {num1+num2}.")
     tot=str(tot)+" "+ str(num1+num2)
     sum+=num1+num2
-    x=input(" vols tornar a repetir? Sí/No ")
 
 print("final del progrma.")
 if not rep>1:
