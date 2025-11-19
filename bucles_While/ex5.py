@@ -12,12 +12,12 @@ while sum<50:
     num1=float(input("introdueix un numero per sumar: "))
     num2=float(input("introdueix un altre numero per sumar: "))
     print(F"la suma de {num1} mes {num2} es {num1+num2}.")
-    tot=str(tot)+" "+ str(num1+num2)
+    tot=str(tot)+", "+ str(num1+num2)
     sum+=num1+num2
 
 print("final del progrma.")
 if not rep>1:
-    print(f"has repetit el programa {rep} vegada i el valor ha sigut {tot}",end="")
+    print(f"has repetit el programa {rep} vegada i el valor ha sigut {tot} ",end="")
 else:
-    print(f"has repetit el programa {rep} vegades i els valors han sigut {tot}")
+    print(f"has repetit el programa {rep} vegades i els valors han sigut {tot} ",end="")
 print("la suma total es ", sum)
