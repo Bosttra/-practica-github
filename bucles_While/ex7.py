@@ -21,7 +21,7 @@ while m==True:
     print("2. Bocadillo de chistorra - 4.5 €")
     print("3. Bikini de jamón - 2.5 €")
     
-    Menú=input("introducca el numero del menu que quiera tomar: ")
+    Menú=int(input("introducca el numero del menu que quiera tomar: "))
     match Menú:
         case 1:
             total+=9
@@ -35,7 +35,7 @@ while m==True:
     print("2. Patatas gruesas - 1.75 €")
     print("3. Patatas rústicas - 2 €")
 
-    acom=input("introducca el numero del acompanyamiento que quiera tomar: ")
+    acom=int(input("introducca el numero del acompanyamiento que quiera tomar: "))
     match acom:
         case 1:
             total+=1.5
@@ -48,7 +48,7 @@ while m==True:
     print("2. Acuarius - 1.5 €")
     print("3. Agua - 1 €")
 
-    bebida=input("introducca el numero del bebida que quiera tomar: ")
+    bebida=int(input("introducca el numero del bebida que quiera tomar: "))
 
     match bebida:
         case 1:
@@ -63,14 +63,14 @@ while m==True:
 
 print("numero de comandes: ", ped)
 print("Preu: ", total,"€")
-print("IVA: ", total/10)
+print("IVA: ",total+total/10)
 final=total+total/10
 if final and final>=30:
-    final-=final*0.05
-    print("total a pagar amb descompte de 5%: ", final)
-elif final<30:
     final-=final*0.15
     print("total a pagar amb descompte de 15%: ", final)
+elif final<30:
+    final-=final*0.05
+    print("total a pagar amb descompte de 5%: ", final)
 else:
     final-=0
     print("total a pagar amb descompte de 0%: ", final)
