@@ -3,5 +3,5 @@
 x=int(input("introdueix nombre: "))
 multi=0
 while not multi==11:
-    print(f"{x} x {multi} 0 {multi*x}")
+    print(f"{x} x {multi} = {multi*x}")
     multi+=1
