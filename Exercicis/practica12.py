@@ -1,3 +1,5 @@
+#12. Realiza un programa que, introduciendo en los valores de lado, base menor, base mayor 
+#y altura de un trapecio isósceles, nos devuelva por pantalla en el área y el perímetro.
 print("en aquest programa el area y perimnetre de un trapeci")
 B=float(input("introdueix valor vase major: "))
 b=float(input("introdueix valor vase menor: "))

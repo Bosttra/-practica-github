@@ -1,3 +1,6 @@
+#10. Introduce por teclado dos números y muestre por pantalla la siguiente información: 
+#cociente, resto y si el dividendo es par o impar.
+
 x=float(input("introduce in numero: "))
 y=float(input("introdueix un altre: "))
 total=x/y

@@ -1,3 +1,7 @@
+#1. Programa que muestre por pantalla la frase “hello world”
+#2. Programa que introduzca por teclado tres tipos de variables y se muestren por pantalla
+#en el siguiente orden: número entero, texto y número decimal.
+
 print("hello world")
 var1=1
 var2="a"

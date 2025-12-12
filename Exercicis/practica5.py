@@ -1,3 +1,5 @@
+#5. Programa que pida cinco palabras y muestre una frase con las cinco. Modifica el código 
+#para que entre palabra y palabra haya una coma.
 var1=input("una paraula si us plau. :)  ")
 var2=input("un altre. :)  ")
 var3=input("un altre. :)  ")
