@@ -1,12 +1,10 @@
 print("     La seva contrasenya  ha de cumplir esl seguents requisits")
-print("1; El primer digit ha de ser>=1 i <=5") 
-print("2; El segon digit ha de ser una lletra minuscula")
-print("3; El tercer digit ha de ser una lletra majuscula")
-print("4; El cuart digit ha de ser un simbol d'aquests: *,_,@")
-print("5; El cinqué digit ha de ser una lletra minuscula")
-print("6; El sise digit ha de ser un numero >=6, <=9")
-print("7;(digit opcional) El sete digit ha de ser un simbol d'aquests: &,/,#")
-print("8;(digit opcional) El vuite digit ha de ser uh numero <=5")
+print("1; Ha d'haver-hi 3 numeros ho més.") 
+print("2; Ha d'haver-hi 2 majusculas ho més.")
+print("3; Ha d'haver-hi 2 minusculas ho més.")
+print("4; Ha d'haver-hi 2 simbols ho més.")
+print("minim total de dijits: 8")
+
 malintents=""
 num=0
 maj=0
@@ -32,7 +30,7 @@ while not num>=3 or not maj>=2 or not min>=2 or not simbol>=2:
             if not j.isalnum():
                 simbol+=1
             
-        if not num>=2:
+        if not num>=3:
             print("error en el numero de numeros")
         if not maj>=2:
             print("error en el numero de majusculas")
