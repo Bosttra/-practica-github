@@ -10,14 +10,14 @@ num=0
 maj=0
 min=0
 simbol=0
-rep=0
-while not num>=3 or not maj>=2 or not min>=2 or not simbol>=2:
-    rep+=1
+
+for z in range(3):
+
     num=0
     maj=0
     min=0
     simbol=0
-    rep=0
+
     password=input("introdueix una contrasenya: ")
     if len(password)>=8:
         for j in password:
@@ -38,13 +38,22 @@ while not num>=3 or not maj>=2 or not min>=2 or not simbol>=2:
             print("error en el numero de minuscula")
         if not simbol>=2:
             print("error en el numero de simbols")
+        if  simbol>=2 and min>=2 and maj>=2 and num>=3:
+            print("contrasenya correcte")
 
 
     else:
-        malintents+=password+" / "
+        
         print("falta de llargada: ")
+    malintents+=password+" / "
 
 
-if rep>1:
-    print(f"el numero d'intents ha sigut {rep} les contrasenyes han sigut {malintents[:-3]}")
-print("la contrannya final ha sigyt", password)
+
+
+print(f"les contrasenyes han sigut {malintents[:-3]}")
+
+
+
+#Contrasenyes de testeig:
+#3IL//Mn99 ------ format incorrecte (minúscules)-----Ben executat
+#lO2@%52Ol ------ format correcte--------------------Ben executat
