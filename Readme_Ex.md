@@ -38,4 +38,6 @@
     de 18 años un 50%. Si la entrada cuesta 12 euros, calcula el total a pagar introduciendo por 
     teclado el número de menores y el número de adultos que asisten al cine.
 
-# Enunciats la carpeta Exercicis:
+# Enunciats la carpeta condicionals Exercicis:
+19. Programa que introduzca dos números y devuelva cuál de los dos es mayor, menor o son iguales
+20. 
