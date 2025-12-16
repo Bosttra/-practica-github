@@ -55,5 +55,10 @@ print(f"les contrasenyes han sigut {malintents[:-3]}")
 
 
 #Contrasenyes de testeig:
-#3IL//Mn99 ------ format incorrecte (minúscules)-----Ben executat
-#lO2@%52Ol ------ format correcte--------------------Ben executat
+#1)3IL//Mn99 ------ format incorrecte (minúscules)-----Ben executat
+#2)lO2@%52Ol ------ format correcte--------------------Ben executat
+#3)EST3334----------falta de llargada------------------Ben executat
+#4)çççÇÇÇ22@--------error en el numero de numeros 
+# )                error en el numero de simbols------Ben executat
+#5)##eses··ENs234--contrasenya correcte---------------Ben executat
+#6)
