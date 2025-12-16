@@ -1,5 +1,5 @@
-#. Mejora el programa anterior para controlar también la introducción de símbolos. Utiliza 
-#elif.
+#28. Mejora el programa anterior para controlar también la introducción de símbolos. Utiliza 
+#elif
 x=input("introduce una letra en mayuscula o minuscula")
 if x.isnumeric():
     print("el valor introducido no es correcto")

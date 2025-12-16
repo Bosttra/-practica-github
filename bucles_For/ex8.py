@@ -1,4 +1,4 @@
-#2. Imprima el siguiente patrón con el ciclo for
+#42. Imprima el siguiente patrón con el ciclo for
 #*
 #**
 #***

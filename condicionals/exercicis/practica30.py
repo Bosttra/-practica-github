@@ -1,4 +1,4 @@
-# Realiza un programa que controle si la longitud de una frase introducida por teclado es
+#30. Realiza un programa que controle si la longitud de una frase introducida por teclado es
 #igual, menor o mayor de 11 caracteres. Utiliza elif
 x=input("introdueix una frase: ")
 x=len(x)

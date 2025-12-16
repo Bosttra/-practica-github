@@ -1,4 +1,4 @@
-# Cómo solucionarías con ayuda de métodos String el problema del ejercicio anterior para 
+#32. Cómo solucionarías con ayuda de métodos String el problema del ejercicio anterior para 
 #no distinguir entre mayúsculas y minúsculas
 x="A quién madruga Dios ayuda"
 x=x.lower()
