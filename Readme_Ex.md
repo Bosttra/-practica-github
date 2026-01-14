@@ -167,7 +167,7 @@ La letra es mayúscula ¿?
 63. Realiza un programa que permita tirar 100 veces un dado y nos presente por pantalla el número
     de veces que se repite cada número.
 64. Programa que pida continuamente números por teclado hasta que el usuario introduzca el valor 
-#-99. Será entonces cuando por pantalla aparecerán las siguientes estadísticas:
+    -99. Será entonces cuando por pantalla aparecerán las siguientes estadísticas:
     a: total de pares
     b: total de impares
     c: total de números positivos
@@ -179,3 +179,8 @@ La letra es mayúscula ¿?
 66. Repite el ejercicio 63. En lugar de ‘tirar’ 100 veces un dado, modifica el programa para ver cómo 
     se comporta el dado en lanzamientos producidos durante aprox 3 segundos. 
     import time
+
+# Enunciats carpeta listas
+ 69. Realiza un programa que permita introducir una cantidad exacta de números, cada número se 
+    irá almacenando en una lista. El programa debe finalizar presentando por pantalla los números 
+    ordenados de menor a mayor.

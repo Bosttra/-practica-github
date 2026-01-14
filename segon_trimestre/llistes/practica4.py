@@ -14,6 +14,7 @@ for x in llistatot:
         llistanum.append(int(x))
     else:
         llistanonum.append(x)
+
 print(llistanum)
 print(llistanonum)
 print(sum(llistanum))
