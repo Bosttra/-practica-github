@@ -184,3 +184,7 @@ La letra es mayúscula ¿?
  69. Realiza un programa que permita introducir una cantidad exacta de números, cada número se 
     irá almacenando en una lista. El programa debe finalizar presentando por pantalla los números 
     ordenados de menor a mayor.
+70. Crea un programa que permita introducir x palabras en una lista llamada lista1. Una vez 
+    introducidas, crea una nueva lista, llamada lista2, exactamente igual a lista1. Se deben mostrar por 
+    pantalla el contenidos de lista1 en orden ascendente y lista2 en orden descendente. Respeta el 
+    formato de entrada y salida tal y como se muestra en el testeo.
