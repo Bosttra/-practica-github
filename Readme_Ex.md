@@ -188,3 +188,12 @@ La letra es mayúscula ¿?
     introducidas, crea una nueva lista, llamada lista2, exactamente igual a lista1. Se deben mostrar por 
     pantalla el contenidos de lista1 en orden ascendente y lista2 en orden descendente. Respeta el 
     formato de entrada y salida tal y como se muestra en el testeo.
+71. Haz un programa que permita al usuario introducir letras en una lista (cantidad indefinida), en 
+    esta lista no deben almacenarse las letras que se han introducido repetidas.
+72. A partir del ejercicio anterior, se da por hecho que las vocales con o sin acento son repetidas y 
+    no deben almacenarse en la lista
+73. Diseña un programa que compruebe si los valores de la lista1 (casa,mesa,sal,sol,agua) están 
+    repetidos o no en la lista2 (casa,luz,tres,tren,sol,pan). Haz que permita visualizar que palabras se 
+    repiten y cuales no
+74. A partir del programa anterior, haz que se visualicen tanto las palabras que se repiten o no de 
+    entre las 2 listas.
