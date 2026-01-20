@@ -197,3 +197,18 @@ La letra es mayúscula ¿?
     repiten y cuales no
 74. A partir del programa anterior, haz que se visualicen tanto las palabras que se repiten o no de 
     entre las 2 listas.
+75. Crea una lista con el siguiente nombre lista1 y su contenido: a,b,D,x,r,X,3,h,w,2,i. Presenta por 
+    pantalla los siguientes resultados:
+            a. Cantidad total de valores
+            b. Cantidad de números
+            c. Cantidad de letras
+            d. Cantidad de mayúsculas
+            e. Suma de los valores numéricos
+76. A partir de la lista del enunciado anterior, haz que el programa visualice por un lado las letras 
+    y por otro los números permitiendo escoger orden ascendente o descendente. Como observarás 
+    en la salida, el orden de las letras no es correcto, busca la manera de solucionarlo.
+77. A partir de la lista del enunciado anterior, haz que el programa visualice por un lado las letras 
+    y por otro los números permitiendo escoger orden ascendente o descendente. Como observarás 
+    en la salida, el orden de las letras no es correcto, busca la manera de solucionarlo.
+78. A partir de la lista definida en el ejercicio 75, haz que el programa pregunte qué valor se desea 
+    eliminar de la lista, siendo únicamente los números los valores permitidos para suprimir
