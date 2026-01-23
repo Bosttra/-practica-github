@@ -3,7 +3,7 @@
 #la palabra
 import random
 y=""
-llista=["a","b","D","x","r","X","3","h","w","2","i"]
+llista=["casa","barco","gato","perro","madera","agua","puente","pantalón"]
 print(llista)
 x=random.randint(0,len(llista))
 while llista[x]!=y:
