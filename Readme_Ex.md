@@ -232,3 +232,6 @@ La letra es mayúscula ¿?
 84. A partir de la lista definida en el ejercicio 81, haz que se visualice por pantalla una de las 
     palabras, pero con todas sus letras desordenadas. El usuario tendrá que recolocar y acertar la 
     palabra secreta. El usuario tendrá 3 oportunidades para adivinar la palabra. 
+85. Te piden realizar un programa en que gestionen la media y la mediana de varias de tres 
+    asignaturas de legua: catalán, inglés y castellano. Una vez introducidos varios registros el 
+    programa debe mostrar la media y mediana los todos los alumnos introducidos
