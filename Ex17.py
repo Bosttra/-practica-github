@@ -7,9 +7,9 @@ mediana=[]
 rep=True
 def notes_recolecte():
    alumnes.append(input("Introdueix el nom de l'alumne: "))
-   notes.append(input("introdueix la nota d'angles: "))
-   notes.append(input("introdueix la nota de castella: "))
-   notes.append(input("introdueix la nota de catala: "))
+   notes.append(int(input("introdueix la nota d'angles: ")))
+   notes.append(int(input("introdueix la nota de castella: ")))
+   notes.append(int(input("introdueix la nota de catala: ")))
 
 while rep==True:
    notes_recolecte()
@@ -17,4 +17,7 @@ while rep==True:
    if rep.lower() in "sisí":
       rep=True
 
-mediana.copy( x for x in range(3) )
+print("la media es: ", sum(notes)/len(notes))
+mediana.append(notes[int(len(notes)/2)])
+print("la medina es de: ", mediana)
+
