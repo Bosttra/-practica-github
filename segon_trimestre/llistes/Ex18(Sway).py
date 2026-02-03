@@ -4,6 +4,16 @@ DNIcorectes=[]
 DNIincorectes=[]
 rep=True
 lletres=["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"]
+def repetir():
+    while not rep in "sisí" or rep.lower() in "no":
+        rep=input("\nVOLS REPETIR? s/n: ")
+        if rep.lower() in "sisí":
+            rep=True
+        elif rep.lower() in "no":
+            print()
+        else:
+            print("ERROR")
+#funciuo que es reproduira cada vegada que es vulgui poder repetir un codi, simplement per reduir el temps, se que no ha sigut explcat
 while rep==True:
     x=input("introdueix els valors numerics del DNI: ")
     if len(x)!=8:
@@ -23,28 +33,48 @@ while rep==True:
         x+=lletres[int(x)%23]
         DNIcorectes.append(x)
         print("DNI ES: ",x)
-    rep=input("\nVOLS REPETIR? s/n: ")
-    if rep.lower() in "sisí":
-        rep=True
+    repetir()
 
 
-print("\n*************MENU*************\n")
-print("1: LISTAR DNI CORRECTOS DE MAYOR A MENOR")
-print("2: LISTAR DNI INCORRECTOS DE MAYOR A MENOR")
-print("3: NUMERO TOTAL DE ERRORES")
-print("4: NUMERO TOTAL DE DNI CORECTOS")
-print("5: PORCENTAGE DE DNI INCORRECTOS")
-print("6: FINALITZAR PROGRAMA\n")
 
-rep=int(input("INTRODUEIX VALOR D'INSTRUCCIÓ: "))
 
-match rep:
-    case 1:
-        DNIcorectes.sort()
-        print("ELS DNI CORRECTES SON:", DNIcorectes)
-    case 2:
-        DNIincorectes.sort()
-        print("ELS DNI CORRECTES SON:", DNIincorectes)
-    case 3:
-        x=llista_intents.count(0)+llista_intents.count(1)+llista_intents.count(3)
-        print(x)
+
+
+rep=True
+while rep==True:
+    print("\n*************MENU*************\n")
+    print("1: LISTAR DNI CORRECTOS DE MAYOR A MENOR")
+    print("2: LISTAR DNI INCORRECTOS DE MAYOR A MENOR")
+    print("3: NUMERO TOTAL DE ERRORES")
+    print("4: NUMERO TOTAL DE DNI CORECTOS")
+    print("5: PORCENTAGE DE DNI INCORRECTOS")
+    print("6: FINALITZAR PROGRAMA\n")
+    x=int(input("INTRODUEIX VALOR D'INSTRUCCIÓ: "))
+# El mach es pot fer amb el if i elif pero ja l'he fet servir per t6ant ja puc demostrar que se aplicar-lo amb correcció 
+# i volia practicar de fer-lo servir
+    match x:
+        case 1:
+            DNIcorectes.sort()
+            print("ELS DNI CORRECTES SON:", DNIcorectes.sort())
+        case 2:
+            DNIincorectes.sort()
+            print("ELS DNI CORRECTES SON:", DNIincorectes.sort())
+        case 3:
+            print(llista_intents.count(0)+llista_intents.count(1)+llista_intents.count(2))
+        case 4:
+            print(llista_intents.count(3))
+        case 5:
+            print((llista_intents.count(0)+llista_intents.count(1)+llista_intents.count(2))/len(llista_intents)*100)
+        case 6:
+            print("PROGRAMA FINALITZAT")
+            rep="n"
+        case _:
+            print("ERROR\n")
+
+    print("1: REPETIR")
+    print("2: NO REPETIR\n")
+    x=int(input("INTRODUEIX VALOR D'INSTRUCCIÓ: "))
+    match x:
+        case 2:
+            rep="n"
+        case _:
