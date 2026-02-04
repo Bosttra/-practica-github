@@ -4,15 +4,8 @@ DNIcorectes=[]
 DNIincorectes=[]
 rep=True
 lletres=["T","R","W","A","G","M","Y","F","P","D","X","B","N","J","Z","S","Q","V","H","L","C","K","E"]
-def repetir():
-    while not rep in "sisí" or rep.lower() in "no":
-        rep=input("\nVOLS REPETIR? s/n: ")
-        if rep.lower() in "sisí":
-            rep=True
-        elif rep.lower() in "no":
-            print()
-        else:
-            print("ERROR")
+
+
 #funciuo que es reproduira cada vegada que es vulgui poder repetir un codi, simplement per reduir el temps, se que no ha sigut explcat
 while rep==True:
     x=input("introdueix els valors numerics del DNI: ")
@@ -33,11 +26,10 @@ while rep==True:
         x+=lletres[int(x)%23]
         DNIcorectes.append(x)
         print("DNI ES: ",x)
-    repetir()
 
-
-
-
+    rep=input("\nVOLS REPETIR? s/n: ")
+    if rep.lower() in "sisí":
+        rep=True
 
 
 rep=True
@@ -55,7 +47,7 @@ while rep==True:
     match x:
         case 1:
             DNIcorectes.sort()
-            print("ELS DNI CORRECTES SON:", DNIcorectes.sort())
+            print("ELS DNI CORRECTES SON:", DNIcorectes)
         case 2:
             DNIincorectes.sort()
             print("ELS DNI CORRECTES SON:", DNIincorectes.sort())
@@ -71,10 +63,6 @@ while rep==True:
         case _:
             print("ERROR\n")
 
-    print("1: REPETIR")
-    print("2: NO REPETIR\n")
-    x=int(input("INTRODUEIX VALOR D'INSTRUCCIÓ: "))
-    match x:
-        case 2:
-            rep="n"
-        case _:
+    rep=input("\nVOLS REPETIR? s/n: ")
+    if rep.lower() in "sisí":
+        rep=True
