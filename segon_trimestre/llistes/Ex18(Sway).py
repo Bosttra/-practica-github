@@ -50,7 +50,7 @@ while rep==True:
             print("ELS DNI CORRECTES SON:", DNIcorectes)
         case 2:
             DNIincorectes.sort()
-            print("ELS DNI CORRECTES SON:", DNIincorectes.sort())
+            print("ELS DNI CORRECTES SON:", DNIincorectes)
         case 3:
             print(llista_intents.count(0)+llista_intents.count(1)+llista_intents.count(2))
         case 4:
