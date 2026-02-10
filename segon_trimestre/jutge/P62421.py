@@ -1,2 +1,2 @@
 llista=input()
-print(llista.split())
+print(llista.split().reverse)
