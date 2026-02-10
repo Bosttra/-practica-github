@@ -1,4 +1,3 @@
 llista=input()
 x=llista.split(" ")
-x.reverse()
-print(x)
+print(x[2],x[1],x[0])
