@@ -1,3 +1,3 @@
 import math
 x=float(input())
-print(math.floor(x),math.ceil(x), round(x))
+print(math.floor(x),math.ceil(x), int(x))
