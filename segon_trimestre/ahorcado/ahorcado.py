@@ -19,8 +19,10 @@ rep=True
 
 def escollir():
     palabra=list(Lista_palabrasecreta[random.randint(0,len(Lista_palabrasecreta))])
+    Lista_partida.clear()
     for j in palabra:
-        Lista_partida.append("_" )
+        Lista_partida.append("_")
+    return palabra
 
 
 def joc():
@@ -44,15 +46,15 @@ def repetir():
     if rep.lower() in "sísi":
         rep=True
     elif rep.lower() in "no":
-        print()
+        return rep
     else:
         print("Error")
         repetir()
         
 while rep==True:
-    escollir()
+    palabra =escollir()
     joc()
-    repetir()
+    rep = repetir()
 print("adivina la paraula: ")
 
 
