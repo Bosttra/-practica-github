@@ -28,7 +28,12 @@ def escollir():
 def joc():
     while Lista_ahorcado[8]!=8 and "_" in Lista_partida:
         print(Lista_partida)
-        x=input("introdueix lletra: ")
+        while not x.isalpha():
+            x=input("introdueix lletra: ").lower()
+            if not x.isnumeric():
+                print("es un numero")
+            if not x.isalnum():
+                print("simbol erroni.")
         if x in palabra:
             for j in range(len(palabra)):
                 if palabra[j]==x:
