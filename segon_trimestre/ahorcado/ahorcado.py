@@ -31,7 +31,7 @@ def x_definr():
     x=""
     while not x.isalpha():
         x=input("introdueix lletra: \n").lower()
-        print(f"lletres no contingudes: {llista_errors}")
+
         if len(x)==1:
             if x.isnumeric():
                 print("es un numero")
@@ -59,28 +59,45 @@ def x_definr():
 def joc():
     
     llista_errors.clear()
+
     while Lista_ahorcado[8]!=8 and "_" in Lista_partida:
+
         print(Lista_partida)
+        print(f"lletres no contingudes: {llista_errors}")
+        print(f"errors: {Lista_ahorcado[8]}: ", Lista_ahorcado[0:Lista_ahorcado[8]])
         x=x_definr()
+
         if type(x)==str:
             if x in palabra:
                 for j in range(len(palabra)):
                     if palabra[j]==x:
                         Lista_partida.pop(j)
                         Lista_partida.insert(j,x)
-                print("Correcte!")
+
+                print( "Correcte!")
+
             else:
-                llista_errors.append(x.upper()).sort()
+                llista_errors.append(x.upper())
+                llista_errors.sort()
                 Lista_ahorcado.append(Lista_ahorcado[8]+1)
                 Lista_ahorcado.pop(8)
+
                 print("incorrecte!")
+            
         else:
-            if str(x).lower()== palabra:
+
+            if str(x).lower()==str(palabra):
+
                 print("correcte")
+            
             else:
-                print("error")
-                llista_errors.append(x)
-        print(f"errors: {Lista_ahorcado[8]}: ", Lista_ahorcado[0:Lista_ahorcado[8]])
+
+                llista_errors.append(str(x).split())
+                Lista_ahorcado.append(Lista_ahorcado[8]+1)
+                Lista_ahorcado.pop(8)
+                                
+                print("error") 
+
 
 def repetir():
     rep=input("Vols repetir?")
@@ -93,8 +110,11 @@ def repetir():
         repetir()
         
 while rep==True:
+    
     palabra =escollir()
     joc()
+
+
     rep = repetir()
 print("adivina la paraula: ")
 
