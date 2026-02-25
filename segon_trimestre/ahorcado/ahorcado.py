@@ -21,10 +21,13 @@ rep=True
 #controla les repeticions
 
 def escollir():
-    palabra=list(Lista_palabrasecreta[random.randint(0,len(Lista_palabrasecreta))])
+    palabra=Lista_palabrasecreta[random.randint(0,len(Lista_palabrasecreta))]
     Lista_partida.clear()
     for j in palabra:
         Lista_partida.append("_")
+    Lista_palabrasecreta.remove(palabra)
+    palabra=list(palabra)
+
     return palabra
 
 def x_definr():
@@ -85,14 +88,19 @@ def joc():
                 print("incorrecte!")
             
         else:
+            correcte=""
+            for j in range(x):
+                correcte=False
+                if x[j].lower()==palabra[j]:
+                    correcte=True
+                else:
+                    correcte=False      
+            if correcte==True:
+                print("correcte")  
 
-            if str(x).lower()==str(palabra):
-
-                print("correcte")
-            
             else:
-
-                llista_errors.append(str(x).split())
+                
+                llista_errors.append(x)
                 Lista_ahorcado.append(Lista_ahorcado[8]+1)
                 Lista_ahorcado.pop(8)
                                 
@@ -110,12 +118,9 @@ def repetir():
         repetir()
         
 while rep==True:
-    
     palabra =escollir()
     joc()
-
-
     rep = repetir()
-print("adivina la paraula: ")
+
 
 
