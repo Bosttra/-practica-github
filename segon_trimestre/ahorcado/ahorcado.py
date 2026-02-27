@@ -21,13 +21,13 @@ rep=True
 #controla les repeticions
 
 def escollir():
+    global Lista_partida
     palabra=Lista_palabrasecreta[random.randint(0,len(Lista_palabrasecreta))]
     Lista_partida.clear()
     for j in palabra:
         Lista_partida.append("_")
     Lista_palabrasecreta.remove(palabra)
     palabra=list(palabra)
-
     return palabra
 
 def x_definr():
@@ -60,8 +60,13 @@ def x_definr():
                 return list(x)
 
 def joc():
-    
+    global Lista_partida
+    global llista_errors
+
     llista_errors.clear()
+    Lista_ahorcado.append(0)
+    Lista_ahorcado.pop(9)
+    palabra=escollir()
 
     while Lista_ahorcado[8]!=8 and "_" in Lista_partida:
 
@@ -81,7 +86,8 @@ def joc():
 
             else:
                 llista_errors.append(x.upper())
-                llista_errors.sort()
+                llista_errors=set(llista_errors)
+                list(llista_errors).sort()
                 Lista_ahorcado.append(Lista_ahorcado[8]+1)
                 Lista_ahorcado.pop(8)
 
@@ -89,7 +95,7 @@ def joc():
             
         else:
             correcte=""
-            for j in range(x):
+            for j in range(0,len(x)):
                 correcte=False
                 if x[j].lower()==palabra[j]:
                     correcte=True
@@ -97,6 +103,7 @@ def joc():
                     correcte=False      
             if correcte==True:
                 print("correcte")  
+                Lista_partida= palabra.copy()
 
             else:
                 
@@ -105,22 +112,23 @@ def joc():
                 Lista_ahorcado.pop(8)
                                 
                 print("error") 
+    rep=repetir()
+    if rep==True:
+        joc()
+
 
 
 def repetir():
     rep=input("Vols repetir?")
     if rep.lower() in "sísi":
         rep=True
+        return rep
     elif rep.lower() in "no":
         return rep
     else:
         print("Error")
         repetir()
-        
-while rep==True:
-    palabra =escollir()
-    joc()
-    rep = repetir()
 
+joc()
 
 
