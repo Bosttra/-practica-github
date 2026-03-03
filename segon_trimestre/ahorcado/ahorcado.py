@@ -86,8 +86,7 @@ def joc():
 
             else:
                 llista_errors.append(x.upper())
-                llista_errors=set(llista_errors)
-                list(llista_errors).sort()
+                llista_errors.sort()
                 Lista_ahorcado.append(Lista_ahorcado[8]+1)
                 Lista_ahorcado.pop(8)
 
@@ -112,23 +111,49 @@ def joc():
                 Lista_ahorcado.pop(8)
                                 
                 print("error") 
-    rep=repetir()
+    rep=repetir(1)
     if rep==True:
         joc()
 
 
 
-def repetir():
-    rep=input("Vols repetir?")
-    if rep.lower() in "sísi":
-        rep=True
-        return rep
-    elif rep.lower() in "no":
-        return rep
-    else:
-        print("Error")
-        repetir()
+def repetir(x):
+    if x==1:
+        rep=input("Vols repetir?")
+        if rep.lower() in "sísi":
+            rep=True
+            return rep
+        elif rep.lower() in "no":
+            return rep
+        else:
+            print("Error")
+            repetir(1)
+    if x==2:
+        opcio=input("escull opció que es vol: ")
+        if opcio.isnumeric():
+            opcio=int(opcio)
+            return opcio
+        else:
+            return opcio
 
-joc()
+def menu(x):
+    if x==1:
+        print("******Menu******")
+        print("1: ahrcado normal")
+        print("t: tancar")
+        x=2
+    if x==2:
+            opcio=escollir(2)
+            match opcio:
+                case 1:
+                    joc()
+                case "t":
+                    return
+                case _:
+                    print("Error")
+                    menu(2)
+        
+menu(1)
 
+#https://programacion.net/articulo/escribir_y_leer_ficheros_en_python_1446
 

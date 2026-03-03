@@ -1,2 +1,1 @@
-x="Alpaca"
-print(x.lower())
+open("hola.txt","r+",encoding="utf-8")
