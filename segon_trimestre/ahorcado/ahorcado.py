@@ -20,6 +20,40 @@ x=""
 rep=True
 #controla les repeticions
 
+def repetir(x):
+    if x==1:
+        rep=input("Vols repetir?")
+    else:
+        rep=input("Vols afegir una paraula?")
+
+    if rep.lower() in "sísi":
+        rep=True
+        return rep
+    elif rep.lower() in "no":
+        return rep
+    else:
+        print("Error")
+        repetir(1)
+
+def menu(x):
+    if x==1:
+        print("******Menu******")
+        print("1: ahrcado normal")
+        print("t: tancar")
+        x=2
+    if x==2:
+        opcio=input("escull opció que es vol: ")
+        if opcio.isnumeric():
+            opcio=int(opcio)
+        match opcio:
+            case 1:
+                joc()
+            case "t":
+                return
+            case _:
+                print("Error")
+                menu(2)
+
 def escollir():
     global Lista_partida
     palabra=Lista_palabrasecreta[random.randint(0,len(Lista_palabrasecreta))]
@@ -30,34 +64,41 @@ def escollir():
     palabra=list(palabra)
     return palabra
 
-def x_definr():
-    x=""
-    while not x.isalpha():
-        x=input("introdueix lletra: \n").lower()
+def x_definr(x):
+    x=str(x)
+    if len(x)==1:
+        if x.isnumeric():
+            print("es un numero")
 
-        if len(x)==1:
-            if x.isnumeric():
-                print("es un numero")
-            elif not x.isalnum() or x.isspace():
-                print("simbol erroni.") 
-            else:
-                return x
-        elif len(x)==0:
-            print("no s'ha escrit res")
+            x_definr(input("introdueix lletra: \n").lower())
+
+        elif not x.isalnum() or x.isspace():
+            print("simbol erroni.") 
+
+            x_definr(input("introdueix lletra: \n").lower())
+
         else:
-            for j in x:
-                z=False
-                if j.isnumeric():
-                    print("numeros no exceptats")
-                    break
-                elif not j.isalnum() or x.isspace():
-                    print("simbols no acceptats")
-                    break
-                else:
-                    z=True
-                    
-            if z==True:
-                return list(x)
+            return x
+        
+    elif len(x)==0:
+        print("no s'ha escrit res")
+
+        x_definr(input("introdueix lletra: \n").lower())
+
+    else:
+        for j in x:
+            z=False
+            if j.isnumeric():
+                print("numeros no exceptats")
+                break
+            elif not j.isalnum() or x.isspace():
+                print("simbols no acceptats")
+                break
+            else:
+                z=True
+                
+        if z==True:
+            return list(x)
 
 def joc():
     global Lista_partida
@@ -73,7 +114,7 @@ def joc():
         print(Lista_partida)
         print(f"lletres no contingudes: {llista_errors}")
         print(f"errors: {Lista_ahorcado[8]}: ", Lista_ahorcado[0:Lista_ahorcado[8]])
-        x=x_definr()
+        x=x_definr(input("introdueix lletra: \n").lower())
 
         if type(x)==str:
             if x in palabra:
@@ -99,59 +140,32 @@ def joc():
                 if x[j].lower()==palabra[j]:
                     correcte=True
                 else:
-                    correcte=False      
+                    correcte=False  
+                    break    
             if correcte==True:
                 print("correcte")  
                 Lista_partida= palabra.copy()
 
             else:
-                
-                llista_errors.append(x)
+                y=""
+                for j in x:
+                    y+=j
+                llista_errors.append(y)
                 Lista_ahorcado.append(Lista_ahorcado[8]+1)
                 Lista_ahorcado.pop(8)
                                 
                 print("error") 
+    rep=repetir(2)
+    if rep==True:
+        Lista_palabrasecreta.append(x_definr(input("introdueix lletra: \n").lower()))
+
     rep=repetir(1)
     if rep==True:
         joc()
 
 
 
-def repetir(x):
-    if x==1:
-        rep=input("Vols repetir?")
-        if rep.lower() in "sísi":
-            rep=True
-            return rep
-        elif rep.lower() in "no":
-            return rep
-        else:
-            print("Error")
-            repetir(1)
-    if x==2:
-        opcio=input("escull opció que es vol: ")
-        if opcio.isnumeric():
-            opcio=int(opcio)
-            return opcio
-        else:
-            return opcio
 
-def menu(x):
-    if x==1:
-        print("******Menu******")
-        print("1: ahrcado normal")
-        print("t: tancar")
-        x=2
-    if x==2:
-            opcio=escollir(2)
-            match opcio:
-                case 1:
-                    joc()
-                case "t":
-                    return
-                case _:
-                    print("Error")
-                    menu(2)
         
 menu(1)
 
