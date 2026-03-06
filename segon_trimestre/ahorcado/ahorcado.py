@@ -21,19 +21,20 @@ rep=True
 #controla les repeticions
 
 def repetir(x):
-    if x==1:
-        rep=input("Vols repetir?")
-    else:
-        rep=input("Vols afegir una paraula?")
+    y=False
+    while y==False:
+            if x==1:
+                rep=input("Vols repetir?")
+            else:
+                rep=input("Vols afegir una paraula?")
 
-    if rep.lower() in "sísi":
-        rep=True
-        return rep
-    elif rep.lower() in "no":
-        return rep
-    else:
-        print("Error")
-        repetir(1)
+            if rep.lower() in "sísi":
+                y=True
+            elif rep.lower() in "no":
+                y=None
+            else:
+                print("Error")
+    return y
 
 def menu(x):
     if x==1:
@@ -64,26 +65,32 @@ def escollir():
     palabra=list(palabra)
     return palabra
 
-def x_definr(x):
+def x_definr(x,y):
     x=str(x)
     if len(x)==1:
         if x.isnumeric():
             print("es un numero")
 
-            x_definr(input("introdueix lletra: \n").lower())
+            x_definr(input("introdueix lletra: \n").lower(),y)
 
         elif not x.isalnum() or x.isspace():
             print("simbol erroni.") 
 
-            x_definr(input("introdueix lletra: \n").lower())
+            x_definr(input("introdueix lletra: \n").lower(),y)
 
         else:
-            return x
+            y=""
+            if y==1:
+                return x
+            else:
+                for j in x:
+                    y+=j
+                return y
         
     elif len(x)==0:
         print("no s'ha escrit res")
 
-        x_definr(input("introdueix lletra: \n").lower())
+        x_definr(input("introdueix lletra: \n").lower(),y)
 
     else:
         for j in x:
@@ -103,10 +110,12 @@ def x_definr(x):
 def joc():
     global Lista_partida
     global llista_errors
+    global palabra
+    global Lista_ahorcado
 
     llista_errors.clear()
     Lista_ahorcado.append(0)
-    Lista_ahorcado.pop(9)
+    Lista_ahorcado.pop(8)
     palabra=escollir()
 
     while Lista_ahorcado[8]!=8 and "_" in Lista_partida:
@@ -114,7 +123,7 @@ def joc():
         print(Lista_partida)
         print(f"lletres no contingudes: {llista_errors}")
         print(f"errors: {Lista_ahorcado[8]}: ", Lista_ahorcado[0:Lista_ahorcado[8]])
-        x=x_definr(input("introdueix lletra: \n").lower())
+        x=x_definr(input("introdueix lletra: \n").lower(),1)
 
         if type(x)==str:
             if x in palabra:
@@ -156,8 +165,8 @@ def joc():
                                 
                 print("error") 
     rep=repetir(2)
-    if rep==True:
-        Lista_palabrasecreta.append(x_definr(input("introdueix lletra: \n").lower()))
+    if rep:
+        Lista_palabrasecreta.append(x_definr(input("introdueix paraula: \n").lower(),2))
 
     rep=repetir(1)
     if rep==True:
