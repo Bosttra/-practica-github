@@ -20,6 +20,7 @@ x=""
 rep=True
 #controla les repeticions
 
+paraules_afegides=[]
 def repetir(x):
     y=False
     while y==False:
@@ -75,8 +76,11 @@ def escollir():
     global Lista_partida
     if opcio==2:
         Lista_palabrasecreta=open("palabra.txt","r",encoding="utf-8").read().splitlines()
+        Lista_palabrasecreta.close()
     if opcio==1:
         Lista_palabrasecreta=["maduixa","escombra","llampada","cargol","estelada","piruleta","xarxa","tortuga","bruixot"]
+    for porfa in paraules_afegides:
+        Lista_palabrasecreta.append(porfa)
     palabra=treure_accents(random.choice(Lista_palabrasecreta))
     Lista_partida.clear()
     for j in palabra:
@@ -199,11 +203,14 @@ def joc():
                 print("error") 
     rep=repetir(2)
     if rep:
-        Lista_palabrasecreta.append(x_definr(input("introdueix paraula: \n").lower(),2))
+        global paraules_afegides
+        paraules_afegides.append(x_definr(input("introdueix paraula: \n").lower(),2))
 
     rep=repetir(1)
     if rep==True:
         joc()
+    else:
+        menu(1)
 
 
 
