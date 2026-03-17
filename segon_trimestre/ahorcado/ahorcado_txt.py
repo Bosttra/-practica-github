@@ -56,14 +56,28 @@ def menu(x):
             case _:
                 print("Error")
                 menu(2)
-
+def treure_accents(paraula):
+    y=""
+    for x in paraula:
+        match x:
+            case "àá":
+                y+="a"
+            case "èé":
+                y+="e"
+            case "óò":
+                y+="o"
+            case "ùú":
+                y+="u"
+            case _:
+                y+=x
+    return y
 def escollir():
     global Lista_partida
     if opcio==2:
         Lista_palabrasecreta=open("palabra.txt","r",encoding="utf-8").read().splitlines()
     if opcio==1:
         Lista_palabrasecreta=["maduixa","escombra","llampada","cargol","estelada","piruleta","xarxa","tortuga","bruixot"]
-    palabra=random.choice(Lista_palabrasecreta)
+    palabra=treure_accents(random.choice(Lista_palabrasecreta))
     Lista_partida.clear()
     for j in palabra:
         Lista_partida.append("_")
@@ -76,13 +90,18 @@ def x_definr(x,y):
     if len(x)==1:
         if x.isnumeric():
             print("es un numero")
-
-            x_definr(input("introdueix lletra: \n").lower(),y)
+            if y== 1:
+                x_definr(input(f"introdueix lletra: \n").lower(),y)
+            else:
+                x_definr(input(f"introdueix paraula: \n").lower(),y)
 
         elif not x.isalnum() or x.isspace():
             print("simbol erroni.") 
 
-            x_definr(input("introdueix lletra: \n").lower(),y)
+            if y== 1:
+                x_definr(input(f"introdueix lletra: \n").lower(),y)
+            else:
+                x_definr(input(f"introdueix paraula: \n").lower(),y)
 
         else:
             y=""
@@ -96,7 +115,10 @@ def x_definr(x,y):
     elif len(x)==0:
         print("no s'ha escrit res")
 
-        x_definr(input("introdueix lletra: \n").lower(),y)
+        if y== 1:
+            x_definr(input(f"introdueix lletra: \n").lower(),y)
+        else:
+            x_definr(input(f"introdueix paraula: \n").lower(),y)
 
     else:
         for j in x:
@@ -112,6 +134,11 @@ def x_definr(x,y):
                 
         if z==True:
             return list(x)
+        else:
+            if y== 1:
+                x_definr(input(f"introdueix lletra: \n").lower(),y)
+            else:
+                x_definr(input(f"introdueix paraula: \n").lower(),y)
 
 def joc():
     global Lista_partida
